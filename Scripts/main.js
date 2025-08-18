@@ -7,36 +7,24 @@
 *  para el curso de EDyA1 en la Universidad Autónoma de Occidente
 */
 
-import {armarInformacion} from './funciones.js';
+import {calcularCuota} from './funciones.js';
 
 const btnEjecutar = document.getElementById("ejecutar");
 const btnRecordar = document.getElementById("recordar");
 
-btnEjecutar.addEventListener('click',ingresarPersona)
+btnEjecutar.addEventListener('click',calcular)
 btnRecordar.addEventListener('click',desplegarTodos)
 
-let info = ''
 
-let tARespuesta = document.getElementById("laRespuesta");
+function calcular() {
+    let nombre = document.getElementById("nombre").value;
+    let prestamo = parseInt(document.getElementById("prestamo").value); 
+    let meses = parseInt(document.getElementById("meses").value);
+    let interes = parseInt(document.getElementById("interes").value);
+    let laRespuesta = document.getElementById("laRespuesta");
 
-function ingresarPersona(){
-    let nombre = document.getElementById("elNombre").value;   
-    let edad = parseInt(document.getElementById("laEdad").value);
-    let peso = parseFloat(document.getElementById("elPeso").value);
-    let residencia = document.getElementById("laResidencia").value;
-    let res
+    let cuota = calcularCuota(prestamo, interes, meses);
 
-    if (nombre.length==0 || isNaN(edad) || isNaN(peso)){
-        res = 'El nombre, edad o peso, no fueron ingresados o tienen valores de entrada errados'
-    }else{
-        res = armarInformacion(nombre, edad, peso, residencia)
-        info +=  res +'\n';    
-    }
-
-    tARespuesta.textContent = res
+    laRespuesta.textContent = `${nombre} debe pagar $${cuota.toFixed(2)} cada mes por el préstamo de $${prestamo} a ${meses} meses con el interés del ${interes}%`;
 }
 
-function desplegarTodos()
-{
-    tARespuesta.textContent = info;
-}

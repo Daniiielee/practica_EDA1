@@ -12,3 +12,14 @@ function armarInformacion(name, age, weight, city){
 }
 
 export {armarInformacion};
+
+function calcularCuota(prestamo, tasaInteres, numeroMeses) {
+  
+  let i = tasaInteres/100;
+  let n = numeroMeses;
+
+  let cuota = prestamo * ((Math.pow(1 + i, n) * i) / (Math.pow(1 + i, n) - 1));
+  return cuota;
+}
+
+export {calcularCuota};

@@ -10,44 +10,40 @@
 </head>
 <body>
     <head>
-        <h1>Ejemplos de FrontEnd Dinámico</h1>
+        <h1>Calculadora de Cuota Mensual</h1>
     </head>
     <main>
         <section class="laInfo">
             <div>
                 <table class="Datos">
-                    <caption>Datos Personales</caption>  
+                    <caption>Ingresa datos</caption>  
                     <tr>
                         <td>Nombre</td>
                         <td>
-                            <input type="text" value="" id="elNombre">
+                            <input type="text" value="" id="nombre">
                         </td>
                     </tr>  
                     <tr>
-                        <td>Edad</td>
+                        <td>Cantidad de Prestamo</td>
                         <td>
                             <!-- pudo ser de tipo number -->
-                            <input type="number" value="" id="laEdad">
+                            <input type="number" value="" id="prestamo">
                         </td>
                     </tr>                     
                     <tr>
-                        <td>Peso</td>
+                        <td>Numero de meses</td>
                         <td>
                             <!-- pudo ser de tipo number -->
-                            <input type="number" value="" id="elPeso">
+                            <input type="number" value="" id="meses">
                         </td>
-                    </tr> 
+                    </tr>
                     <tr>
-                        <td>Ciudad Residencia</td>
+                        <td>Tasa de Interes</td>
                         <td>
-                            <select id="laResidencia">
-                                <option value="Cali" selected>Cali es Cali</option><!-- Opción por defecto -->
-                                <option value="Yumbo">Yumbo City</option> 
-                                <option value="Palmira">Palmira Señorial</option> 
-                                <option value="Jamundi">Jamundi Bella</option>                         
-                            </select>  
+                            <input type="number" value="" id="interes">
                         </td>
-                    </tr>                           
+                    </tr>
+                                             
                 </table>
             </div>
             <div>
@@ -55,7 +51,6 @@
             </div>
             <div>
                 <button id="ejecutar">Procesar</button> 
-                <button id="recordar">Ver historial</button>
             </div>
         </section>
         <hr>
