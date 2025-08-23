@@ -12,8 +12,15 @@ function armarInformacion(informacion){
 }
 
 function calcularcuota(prestamo, interes, meses){
-    let cuota= parseInt(prestamo  *( (((1+interes)**meses) * interes) / ( ((1+interes)**meses) - 1)));
-    return cuota;
+    let i = interes;
+
+    if (i > 1) {
+        i = i/100
+    }
+    let n = meses;
+    let cuota = prestamo * ((Math.pow(1 + i, n) * i) / (Math.pow(1 + i, n) - 1));
+
+  return cuota;
 }
 
 function desplegarObjetos(objeto){
